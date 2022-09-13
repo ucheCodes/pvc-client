@@ -5,8 +5,6 @@ import Vote from "../components/Vote.vue";
 import AllVotes from "../components/AllVotes.vue";
 import Result from "../components/Result.vue";
 import Admin from "../components/Admin.vue";
-import Metamask from "../components/Metamask.vue";
-import Funding from "../components/Funding.vue";
 import Wallet from "../components/CreateWallet.vue";
 import Users from "../components/Users.vue";
 import CreateWallet from "../components/CreateWallet.vue";
@@ -43,16 +41,6 @@ const router = createRouter({
       path: "/admin",
       name: "admin",
       component: Admin,
-    },
-    {
-      path: "/metamask",
-      name: "metamask",
-      component: Metamask,
-    },
-    {
-      path: "/funding",
-      name: "funding",
-      component: Funding,
     },
     {
       path: "/users",

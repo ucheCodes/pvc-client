@@ -88,7 +88,8 @@ export const useVoteStore = defineStore('user', () => {
                 privateKey : _privateKey,
                 mnemonic : _mnemonic,
                 name : _name,
-                nin : _nin
+                nin : _nin,
+                timestanp : new Date()
             }];
             alert(`new users ${_name} signed in just now`);
         });
@@ -101,7 +102,8 @@ export const useVoteStore = defineStore('user', () => {
                 imagePath : imagePath,
                 goal : goal,
                 categoryOfElection : categoryOfElection,
-                nin : _nin
+                nin : _nin,
+                timestanp : new Date()
             }];
             alert(`new vote casted in favour of ${candidateName}`);
         });
@@ -111,7 +113,6 @@ export const useVoteStore = defineStore('user', () => {
         getAllVotesFromBlockChain();
         GetAllUsersFromBlockChain();
         emission();
-        Hello();
     }
 
     //return the global variables so they can be accessible across components

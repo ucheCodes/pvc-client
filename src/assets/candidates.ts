@@ -3,7 +3,7 @@ const data = [
     name: "Prince Malik Ado-Ibrahim ",
     key: "pma",
     party: "YPP",
-    photo: "/src/assets/img/malik.jpg",
+    photo: "./src/assets/img/malik.jpg",
     goal:
       "Prince was able to defeat his counterpart Mrs. Ruby Issac with over 66 votes during the election primariess" +
       "Ado-Ibrahim, urges Nigerians to put away religious and ethnic diversity, for collective development. YPP has a goal" +
@@ -15,7 +15,7 @@ const data = [
     name: "Rabiu Musa Kwankwaso",
     key: "rmk",
     party: "NNPP",
-    photo: "/src/assets/img/kwankwaso.jpg",
+    photo: "./src/assets/img/kwankwaso.jpg",
     goal:
       "Rabiu Musa Kwankwaso is a Nigerian politician who was the Governor of Kano state from 1999 to 2003 and 2011 to 2015." +
       "He is currently the national leader of the New Nigeria Peoples Party. Kwankwaso enjoys widespread support in Kano and north-western Nigeria; he has been viewed as a charismatic populist.",
@@ -24,7 +24,7 @@ const data = [
     name: "Omoyele Sowore ",
     key: "oys",
     party: "AAC",
-    photo: "/src/assets/img/sowore.jpg",
+    photo: "./src/assets/img/sowore.jpg",
     goal:
       "Omoyele Sowore is a Nigerian from the Niger Delta region who has spent his entire adult life fighting for a better NIGERIA. Despite the poverty of my upbringing, despite the fact that I had no" +
       " godfathers or godmothers, I have achieved a significant amount in my political and personal careers." +
@@ -35,7 +35,7 @@ const data = [
     name: "Peter Obi",
     key: "pto",
     party: "LP",
-    photo: "/src/assets/img/obi1.jpg",
+    photo: "./src/assets/img/obi1.jpg",
     goal:
       "I am aspiring for the post of President of Nigeria because after careful study of Nigeria" +
       " and where Nigeria is today, I discovered that my country is too divided. I believe that the government" +
@@ -47,7 +47,7 @@ const data = [
     name: "Prince Adewole Adebayo",
     key: "paa",
     party: "SDP",
-    photo: "/src/assets/img/adebayo.jpg",
+    photo: "./src/assets/img/adebayo.jpg",
     goal:
       "I think Nigerians should be grateful to God for another opportunity to determine our destiny." +
       " I will also plead with them to endure the hardships that we are experiencing today under the present " +
@@ -62,7 +62,7 @@ const data = [
     name: "Asiwaju Bola Tinubu",
     key: "abt",
     party: "APC",
-    photo: "/src/assets/img/tinubu.jpg",
+    photo: "./src/assets/img/tinubu.jpg",
     goal:
       "Asiwaju Bola Ahmed Tinubu, popularly called BAT, is a master strategist, generalissimo," +
       "who has dominated the politics of Nigeria’s commercial capital for over two decades, Tinubu, has " +
@@ -74,7 +74,7 @@ const data = [
     name: "Atiku Abubakar",
     key: "aka",
     party: "PDP",
-    photo: "/src/assets/img/atiku.jpg",
+    photo: "./src/assets/img/atiku.jpg",
     goal:
       " Nigeria is a “sinking ship” that must be rescued urgently.I offer myself to rescue the" +
       " sinking ship. Under my captainship, this ship will sail to a brighter course by the grace of God. " +
@@ -86,7 +86,7 @@ const data = [
     name: "Uche Victor",
     key: "ucv",
     party: "Youth Party",
-    photo: "/src/assets/img/img1.jpg",
+    photo: "./src/assets/img/img1.jpg",
     goal:
       "Nigeria as a nation needs a young innovative, intellectual, educated and technologically oriented mind who understands the" +
       " nitty gritty of nation building and economic growth. A young mind that is vast, exposed and knowledgeable. Someone who understands" + 

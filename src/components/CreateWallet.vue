@@ -47,7 +47,6 @@ onMounted(() => {
     privateKey.value = data.privateKey
     mnemonic.value = data.mnemonic;
     isWalletCreated.value = true;
-    console.log(data);
   }
 })
 </script>
