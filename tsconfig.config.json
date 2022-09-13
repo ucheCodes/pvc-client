@@ -5,6 +5,9 @@
     "composite": true,
     "types": ["node"],
     "allowJs": true,
-    "noImplicitThis": false
+    "noImplicitThis": false,
+    "resolveJsonModule": true,
+    "module": "es2022",
+    "moduleResolution": "Node"
   }
 }

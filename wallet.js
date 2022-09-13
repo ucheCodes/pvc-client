@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 
 function newWallet() {
-  const wallet = ethers.Wallet.createRandom([]);
+  const wallet = ethers.wallet.createRandom([(options = {})]);
 
   const response = {
     privateKey: wallet.privateKey,
@@ -10,4 +10,7 @@ function newWallet() {
   };
   return response;
 }
-export default { newWallet };
+function hello() {
+  console.log("chzai");
+}
+export default { hello, newWallet };

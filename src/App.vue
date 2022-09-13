@@ -5,10 +5,10 @@ import Footer from "@/components/Footer.vue";
 
 <template>
   <header>
-      <Nav></Nav>
+    <Nav></Nav>
   </header>
   <Footer></Footer>
 </template>
 <style>
-@import "@/assets/base.css"; 
+@import "@/assets/base.css";
 </style>
