@@ -7,12 +7,14 @@ import wallet from "../assets/wallet";
   const voteStore = useVoteStore();
   const {connect, getAllVotesFromBlockChain, GetAllUsersFromBlockChain, AddUserToBlockChain, addVoteToBlockChain} = useVoteStore();
   const {votesArray, usersArray, privateKey, walletAddress, mnemonic, nin, name, isWalletCreated} = storeToRefs(voteStore); 
-
+  const showKey = ref<boolean>(false);
 function makeTempWallet(name : string){
   var wal = wallet.newWallet();
   localStorage.setItem(name, JSON.stringify(wal));
 }
-
+function viewKey(){
+   showKey.value =! showKey.value;
+}
 function createWallet() {
   if (nin.value && name.value) {
     var wal = wallet.newWallet();
@@ -35,6 +37,28 @@ function addToLocalStorage(data : object) {
   }
 }
 
+
+function register(){
+  var regForm = document.getElementById("regForm");
+  var loginForm = document.getElementById("loginForm");
+  var indicator = document.getElementById("indicator");
+  if(regForm && loginForm && indicator){
+      regForm.style.transform = "translateX(0px)";
+      loginForm.style.transform = "translateX(0px)";
+      indicator.style.transform = "translateX(100px)";
+  }
+}
+function login(){
+  var regForm = document.getElementById("regForm");
+  var loginForm = document.getElementById("loginForm");
+  var indicator = document.getElementById("indicator");
+  if(regForm && loginForm && indicator){
+      regForm.style.transform = "translateX(300px)";
+      loginForm.style.transform = "translateX(300px)";
+      indicator.style.transform = "translateX(0px)";
+  }
+}
+
 onMounted(() => {
   //addVoteToBlockChain("0x86393e30A3638909B2197D13a14d27Ba0ce897c2", "candidateName", "candidateKey", "candidateParty", "imagePath", "goal", "categoryOfElection", "nin3");
    var getWalletData = localStorage.getItem("wallet");
@@ -52,8 +76,9 @@ onMounted(() => {
 </script>
 <template>
   <div>
-    <h1>Create Wallet</h1>
-    <p>
+    <div class="row">
+      <div class="col-2">
+        <p>
       You need a crypto wallet to perform transactions on the blockchain
       network. Supply your Name and National Identification Number in the input field
       below then click on the button below to create your digital wallet. The
@@ -67,42 +92,44 @@ onMounted(() => {
       loss of funds, Do not use the wallet information generated on this
       platform to perform transaactions (buy or sell crypto) on the ethereum mainnet. If you do this,
       you do so at your own risk.
-    </p>
-    <div v-if="isWalletCreated">
-      <h1>Your Wallet data</h1>
-      <div class="select">
-        <h4>address:  </h4>
-        <label>{{walletAddress}}</label>
+      </p> 
       </div>
-      <div class="select">
-        <h4>Private Key:  </h4>
-        <label>{{privateKey}}</label>
+      <div class="col-2" v-if="isWalletCreated">
+        <h2 class="title">Your Wallet Info</h2>
+        <div class="form-container">
+            <form onsubmit="event.preventDefault()">
+                <input type="text" :value="walletAddress">
+                <input v-if="showKey" type="text" :value="privateKey">
+                <input v-else type="text" value="xxxxxxx ... xxxxxx">
+                <input type="text" :value="mnemonic">
+                <button @click="viewKey" class="btn">View Private Key</button>
+            </form>
+        </div>
+        </div>
+      <div class="col-2" v-else>
+          <h2 class="title">Create Wallet</h2>
+          <div class="form-container">
+              <div class="form-btn">
+                  <span @click="login">Login</span>
+                  <span @click="register">Register</span>
+                  <hr id="indicator">
+              </div>
+              <form id="loginForm" onsubmit="event.preventDefault()">
+                  <input type="text" placeholder="username">
+                  <input type="password" placeholder="password">
+                  <button class="btn" type="submit">Login</button>
+                  <a href="">Forgot password</a>
+              </form>
+              <form id="regForm" onsubmit="event.preventDefault()">
+                  <input v-model="nin" maxlength="10" type="number" placeholder="enter your NIN">
+                  <input v-model="name" type="text" placeholder="enter your user name"/>
+                  <input type="password" placeholder="password">
+                  <input type="password" placeholder="confirm password">
+                  <button class="btn" @click="createWallet" type="submit">Create Wallet</button>
+                  <a href="">Forgot password</a>
+              </form>
+          </div>
       </div>
-      <div class="select">
-        <h4>Security phrase:</h4>
-        <textarea v-model="mnemonic"></textarea>
-      </div>
-      <div class="btn">
-        <router-link :to="{ name: 'result' }">
-          <button>View Result</button>
-        </router-link>
-      </div>
-    </div>
-    <div v-else>
-      <div class="select">
-        <h4>User Information</h4><br>
-        <input v-model="nin" maxlength="10" type="number" placeholder="enter your NIN" /> <br>
-        <input v-model="name" type="text" placeholder="enter your Name" />
-      </div>
-      <div>
-        <span>NIN :  {{ nin }}</span>
-        <span>Name :  {{ name }}</span>
-      </div>
-      <div class="btn">
-        <button @click="createWallet" type="button">
-          <span></span> Create Wallet
-        </button>
-      </div>
-    </div>
+    </div>  
   </div>
 </template>

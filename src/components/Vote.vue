@@ -10,11 +10,10 @@
   const {votesArray, usersArray, privateKey, walletAddress, mnemonic, nin, name, isWalletCreated} = storeToRefs(voteStore); 
 </script>
 <template>
-  <div class="content">
+  <div class="row">
     <section id="vote">
-      <h1>Cast a vote</h1>
-      <div class="vote">
-        <div class="select">
+      <h1 class="title">Cast a vote</h1>
+      <div class="select btns">
           <h4>Select Election Category</h4>
           <select name="category" id="category">
             <option value="presidential">Presidential</option>
@@ -22,17 +21,8 @@
             <option value="local">Local</option>
           </select>
         </div>
-        <div v-if="stateCategory" class="select">
-          <h4>Select State</h4>
-          <select name="category" id="category">
-            <option value="abia">Abia</option>
-            <option value="adamawa">Adamawa</option>
-            <option value="local">Local</option>
-            <option value="gorvernorship">Gorvernorship</option>
-          </select>
-        </div>
+      <div class="vote">
         <div>
-          <h3>Political Aspirants</h3>
           <div
             v-for="aspirant in data"
             :key="aspirant.key"
@@ -54,12 +44,12 @@
               <p>
                 {{ aspirant.goal }}
               </p>
-              <div class="btn" v-if="isWalletCreated">
-                <button  @click="addVoteToBlockChain(walletAddress, aspirant.name, aspirant.key, aspirant.party,aspirant.photo, aspirant.goal,'presidential',nin.toString())">Cast Vote</button>
+              <div class="btns" v-if="isWalletCreated">
+                <button class="btn"  @click="addVoteToBlockChain(walletAddress, aspirant.name, aspirant.key, aspirant.party,aspirant.photo, aspirant.goal,'presidential',nin.toString())">Cast Vote</button>
               </div>
-              <div class="btn" v-else>
+              <div class="btns" v-else>
                <router-link :to="{ name: 'wallet' }">
-                 <button>Create Wallet</button>
+                 <button class="btn">Create Wallet</button>
                </router-link>
               </div>
             </div>
@@ -67,11 +57,9 @@
           </div>
         </div>
       </div>
-    </section>
-    <section class="content">
-      <div class="btn">
+      <div class="btns">
         <router-link :to="{ name: 'result' }">
-          <button>View Results</button>
+          <button class="btn">View Results</button>
         </router-link>
       </div>
     </section>

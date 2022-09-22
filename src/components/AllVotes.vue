@@ -13,18 +13,10 @@
   })
 </script>
 <template>
-  <div class="content">
+  <div class="row">
     <section id="results">
-      <h3>All Votes Casted</h3>
-      <div>
-        <div class="select">
-          <h4>Select Election Category</h4>
-          <select name="category" id="category">
-            <option value="presidential">Presidential</option>
-            <option value="state">State</option>
-            <option value="local">Local</option>
-          </select>
-        </div>
+      <h3 class="title">All Votes Casted</h3>
+      <div class="flex">
         <div class="select">
           <h4>Filter Votes By ...</h4>
           <select name="category" id="category">
@@ -35,15 +27,6 @@
         <div class="select">
           <h4>Total Number of Votes</h4>
           <label for="votes">{{votesArray.length - 3}}</label>
-        </div>
-        <div v-if="stateCategory" class="select">
-          <h4>Select State</h4>
-          <select name="category" id="category">
-            <option value="abia">Abia</option>
-            <option value="adamawa">Adamawa</option>
-            <option value="local">Local</option>
-            <option value="gorvernorship">Gorvernorship</option>
-          </select>
         </div>
       </div>
       <div>
@@ -61,7 +44,8 @@
           <tbody v-for="(votes, count) in votesArray" :key="votes._address">
             <tr v-if="votes.candidateName != 'candidateName'">
               <td data-label="S / N">{{count}}</td>
-              <td data-label="Voter's Address">{{votes._address}}</td>
+              <td class="long" data-label="Voter's Address">{{votes._address}}</td>
+              <td class="short" data-label="Voter's Address">{{votes._address.slice(0,4)}} ... {{votes._address.slice(votes._address.length-4,votes._address.length)}}</td>
               <td data-label="Voter's NIN">{{votes.Nin}}</td>
               <td data-label="Political Party Voted">{{votes.candidateParty}}</td>
               <td data-label="Candidate Voted">{{votes.candidateName}}</td>

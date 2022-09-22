@@ -19,7 +19,6 @@
     data.forEach((element : any) => {
       const res = votesArray.value.filter((r : any) => r.candidateName == element.name);
       if(res.length){
-        console.log(res.length);
         const obj = {
           name : element.name,
           votesCount : res.length,
@@ -35,32 +34,13 @@
   }
 </script>
 <template>
-  <div class="content">
+  <div class="row">
     <section id="results">
-      <h3>Election Results In Real Time</h3>
-      <div>
-        <div class="select">
-          <h4>Select Election Category</h4>
-          <select name="category" id="category">
-            <option value="presidential">Presidential</option>
-            <option value="state">State</option>
-            <option value="local">Local</option>
-          </select>
-        </div>
-        <div v-if="stateCategory" class="select">
-          <h4>Select State</h4>
-          <select name="category" id="category">
-            <option value="abia">Abia</option>
-            <option value="adamawa">Adamawa</option>
-            <option value="local">Local</option>
-            <option value="gorvernorship">Gorvernorship</option>
-          </select>
-        </div>
-      </div>
-      <div>
-        <label for="votes Casted"><b>Total Number of votes casted : {{votesArray.length}}</b></label><br>
+      <h3 class="title">Election Results In Real Time</h3>
+      <div>        <label for="votes Casted"><b>Total Number of votes casted : {{votesArray.length}}</b></label><br>
         <label><b>Results last computed on {{moment(new Date()).format("LLL")}}</b></label><br>
-        <label for="test">N:B : 3 random sample data was added to the blockchain during development for test purposes only</label>
+        <label for="test">N:B : 3 random sample data was added to the blockchain during development for test purposes only</label></div>
+      <div>
         <table class="table">
           <thead>
             <th>S / N</th>

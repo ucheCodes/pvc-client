@@ -4,96 +4,51 @@ function Alert() {
 }
 </script>
 <template>
-  <div class="content">
-    <section id="admin">
-      <h3>Election Information Entry Page</h3>
-      <form>
-        <div class="select">
-          <label for="category">Select Category</label>
+  <div class="row">
+    <div class="col-2">
+      <h2 class="title">Register Political Aspirant</h2>
+      <div class="form-container admin">
+          <form onsubmit="event.preventDefault()">
           <select name="category" id="category">
-            <option value="presidential">Presidential</option>
-            <option value="state">State</option>
-            <option value="local">Local</option>
-            <option value="gorvernorship">Gorvernorship</option>
-          </select>
-        </div>
-        <div class="select">
-          <label for="state">Select State</label>
-          <select name="category" id="category">
+          <option value="presidential">Select Type of election</option>
+          <option value="presidential">Presidential</option>
+          <option value="state">State</option>
+          <option value="local">Local</option>
+          <option value="gorvernorship">Gorvernorship</option>
+        </select>
+        <select name="category" id="category">
+            <option value="abia">Select Election Category</option>
             <option value="abia">Abia</option>
             <option value="abia">Adamawa</option>
             <option value="abia">Anambra</option>
             <option value="abia">Bauchi</option>
           </select>
-        </div>
-        <h3>Aspiring Politician Information</h3>
-        <div>
-          <div class="input">
-            <span> Aspirant's Name</span>
-            <input type="text" placeholder="Enter Aspirant's name" />
-          </div>
-          <div class="input">
-            <span> Aspirant's NIN</span>
-            <input type="text" placeholder="Enter Aspirant's NIN" />
-          </div>
-          <div class="input">
-            <span> Political Party</span>
-            <select name="category" id="category">
+        <select name="category" id="category">
+              <option value="apc">Select Election political party</option>
               <option value="apc">Apc</option>
               <option value="apc">Pdp</option>
               <option value="apc">Lp</option>
               <option value="apc">Prp</option>
-            </select>
-          </div>
-          <div class="input">
-            <span> Contesting Category</span>
-            <select name="category" id="category">
-              <option value="presidential">Presidential</option>
-              <option value="state">State</option>
-              <option value="local">Local</option>
-              <option value="gorvernorship">Gorvernorship</option>
-            </select>
-          </div>
-          <div class="input">
-            <span> Aspirant's Purpose</span>
-            <textarea
-              name="textarea"
-              id="textarea"
-              placeholder="Enter a descriptive message illustrating aspirant's purpose"
-              maxlength="300"
-              cols="30"
-              rows="10"
-            >
-            </textarea>
-          </div>
-        </div>
-        <div class="btn">
-          <button @click="Alert">Submit</button>
-        </div>
-      </form>
-      <div>
-        <h3>Add a new Election Category</h3>
-        <div>
-          <div class="input">
-            <span> Election Category Name</span>
-            <input type="text" placeholder="Enter a new category name" />
-          </div>
-          <div class="input">
-            <span>Start Date</span>
-            <input
-              type="date"
-              placeholder="Enter date when election commences"
-            />
-          </div>
-          <div class="input">
-            <span>End Date</span>
-            <input type="date" placeholder="Enter date when election ends" />
-          </div>
-        </div>
-        <div class="btn">
-          <button @click="Alert">Submit</button>
-        </div>
+        </select>
+              <input type="text" placeholder="Enter Aspirant's name here">
+              <input type="text" placeholder="Aspirant's Mobile number">
+              <input type="email" placeholder="Aspirant's email">
+              <input type="text" placeholder="Aspirant's NIN">
+              <input type="text" placeholder="Aspirant's political purpose">
+              <button class="btn" type="submit">Submit</button>
+          </form>
       </div>
-    </section>
+    </div>
+    <div class="col-2">
+      <h2 class="title">Add a new Election category</h2>
+      <div class="form-container">
+          <form onsubmit="event.preventDefault()">
+              <input type="text" placeholder="Enter Election category name">
+              <input type="date" placeholder="Enter election start date">
+              <input type="date" placeholder="Enter election end date">
+              <button class="btn" type="submit">Submit</button>
+          </form>
+      </div>
+    </div>
   </div>
 </template>

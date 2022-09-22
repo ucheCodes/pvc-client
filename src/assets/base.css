@@ -1,9 +1,9 @@
-:root{
+/*:root{
   --green : green;
   --light-green : #4dff4d;
   --white : #ffffff;
   --black : black;
-}
+ }
 .input{
   display: flex;
   justify-content: space-between;
@@ -45,7 +45,7 @@ h1:hover{
 }
 .banner p{
   font-weight: 700;
-}
+} */
 /*
 #about{
   display: none;
@@ -58,7 +58,7 @@ h1:hover{
 }
 #results{
   display: none;
-} */
+} 
 ul{
   list-style-type: none;
 }
@@ -83,7 +83,7 @@ h3{
   background-size: cover;
   background-position: center;
 }
-
+*/
 .nav{
   height: 50px;
   width: 100%;
@@ -128,12 +128,11 @@ h3{
 .nav > .nav-btn, .nav > #nav-check{
   display: none;
 }
-
 .content{
   width: 100%;
   position: absolute;
-}
-.btn{
+}/*
+ .btn{
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -150,7 +149,7 @@ h3{
   color: var(--white);
   border: 1px solid var(--white);
   cursor: pointer;
-}
+} 
 .banner .btn button:hover{
   border: none;
   cursor: pointer;
@@ -171,7 +170,6 @@ h3{
 .about img{
   width: 100%;
   height: 400px;
-  /* margin: 10px; */
   justify-content: center;
 }
 
@@ -179,7 +177,7 @@ h3{
   display: flex;
   margin: 3px;
   justify-content: space-between;
-}
+}*/
 .vote .aspirants{
   display: flex;
   flex-direction: column;
@@ -202,7 +200,7 @@ h3{
   flex-direction: column;
   justify-content: space-between;
 }
-
+/*
 .table{
   width: 100%;
   border-collapse: collapse;
@@ -240,6 +238,381 @@ footer p{
 .footer{
   margin-top: 10px;
 }
+*/
+
+/*New styles*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --main : green;
+  --main2 :  #4dff4d;
+  --green : green;
+  --light-green : #4dff4d;
+  /* --gray : #555;
+  --dark-gray : #333; */
+  --white: #fff;
+}
+a{
+  text-decoration: none;
+  color: var(--gray) ;
+}
+p{
+  color: var(--gray);
+}
+.container{
+  max-width: 1300px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.short{
+  display: none;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.row{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.row-3{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.row-3 input{
+  width: 250px;
+  height: 30px;
+  padding: 5px;
+}
+.col-1{
+  width: 100%;
+  margin: 5px;
+}
+.col-2{
+  flex-basis: 50%;
+  min-width: 300px;
+}
+.col-2 img{
+  max-width: 100%;
+  padding: 50px 0;
+}
+.col-2 h1{
+  font-size: 50px;
+  line-height: 60px;
+  margin: 25px 0;
+}
+.col-2 .about{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.col-2 .about img{
+  width: 500px;
+  height: 500px;
+}
+.btn{
+  display: inline-block;
+  color:var(--white);
+  background: var(--main);
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+.btn:hover{
+  background: var(--main2);
+}
+.header{
+  background: radial-gradient(var(--white),var(--main));
+}
+.header .row{
+  margin-top: 70px;
+}
+.categories{
+  margin: 70px 0;
+}
+.col-3{
+  flex-basis: 30%;
+  margin-bottom: 30px;
+  min-width: 250px;
+}
+.col-3 img{
+  width: 100%;
+}
+.small-container{
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.col-4{
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform .5s;
+}
+.col-4 :hover{
+  transform: translateY(-5px);
+}
+.col-4 img{
+  width: 100%;
+}
+.col-4 p{
+  font-size: 14px;
+}
+.title{
+  text-align: center;
+  margin: 0 auto 80px;
+  position: relative;
+  line-height: 60px;
+  color: var(--gray);
+}
+.title::after{
+  content: "";
+  background: var(--main);
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+h4{
+  font-weight: normal;
+  color: var(--gray);
+}
+.row-2{
+  justify-content: space-between;
+  margin: 100px auto 50px;
+}
+select{
+  border: 1px solid var(--main);
+  padding: 5px;
+}
+select:focus{
+  outline: none;
+}
+.btns{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.account-page, .logistics, .chats{
+  padding: 50px 0;
+  background: radial-gradient(var(--white),var(--main));
+}
+.form-container.admin{
+  padding: 0;
+  height: 600px;
+}
+.admin select{
+  margin: 8px;
+}
+.form-container{
+  background: var(--white);
+  width: 300px;
+  height: 400px;
+  position: relative; 
+  text-align: center;
+  padding: 20px 0;
+  margin: auto;
+  box-shadow: 0 0 20px 0px rgba((0), 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-container span{ 
+  font-weight: bold;
+  padding: 0 10px;
+  color: var(--dark-gray);
+  cursor: pointer;
+  width: 100px;
+  display: inline-block;
+}
+.form-container form{
+  max-width: 300px;
+  padding: 0 20px;
+  position: absolute;
+  top: 130px;
+  transition: transform 1s;
+}
+form input, .control input{
+  width: 100%;
+  height: 30px;
+  margin: 10px 0;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+}
+form .btn, .control .btn{
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+form .btn:focus{
+  outline: none;
+}
+form a{
+  font-size: 12px;
+}
+.form-btn{
+  display: inline-block;
+}
+#loginForm{
+  left: -300px;
+}
+#regForm {
+  left: 0px;
+}
+#indicator{
+  width: 100px;
+  border: none;
+  background: var(--main);
+  height: 3px;
+  margin-top: 8px;
+  transform: translateX(100px);
+  transition: transform 1s;
+}
+.chats .form-container{
+  overflow-y: scroll;
+}
+.chats .sender, .chats .receiver{
+  width: fit-content;
+  height: fit-content;
+  color: var(--white);
+  background: var(--main);
+  border-radius: 30px;
+  margin: 8px;
+  padding: 5px;
+
+}
+.chats .receiver{
+  background: var(--main2);
+}
+.chats .control{
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/*table styles */
+.table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.table td, .table th{
+  padding: 12px 15px;
+  border: 1px #ddd;
+  text-align: center;
+  font-size: 16px;
+}
+.table td img{
+  width: 50px;
+  height: 50px;
+}
+.table th{
+  background-color: var(--main);
+  color: var(--white);
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
 
 /*media queries*/
 @media screen and (min-width : 1024px) {
@@ -254,13 +627,6 @@ footer p{
       width: 50%;
       margin: 7px auto;   
   }
-   input,  select{
-      width: 340px !important;
-      height: 30px !important;
-  }
-  textarea{
-      width: 340px;
-  } 
 }
 @media (max-width: 600px) {
   .nav > .nav-btn{
@@ -348,7 +714,21 @@ footer p{
       font-weight: bold;
       text-align: left;
   }
-
+  .long{
+    display: none !important;
+  }
+  .row{
+    text-align: center;
+}
+.row-3{
+    flex-direction: column;
+}
+.row-3 select{
+    margin: 5px 0;
+}
+.col-2, .col-3, .col-4{
+    flex-basis: 100%;
+}
 }
 
 
